@@ -4,11 +4,10 @@
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
 // TypeScript Version: 2.3
 
-/// <reference types="chai" />
 /// <reference types="jquery" />
+import { Assertion } from "chai";
 
-declare namespace Chai {
-
+declare module "chai" {
     interface Assertion {
         attr: (name: string, value?: string) => Assertion;
         prop: (name: string, value?: any) => Assertion;
@@ -2578,5 +2577,5 @@ interface ChaiJQuery {
      * @param callback The new function to add to the queue, with a function to call that will dequeue the next item.
      */
     queue(queueName: string, callback: Function): ChaiJQuery;
-    should: Chai.Assertion;
+    should: Assertion;
 }
